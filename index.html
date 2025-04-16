@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ROOSSAAR</title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .scene {
+      width: 340px;
+      height: 220px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .scene:hover .card,
+    .scene:active .card {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.8rem;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .front {
+      background: linear-gradient(135deg, #00f0ff, #ff00f7, #00ffd9, #ff8a00);
+      background-size: 300% 300%;
+      animation: holographic 6s ease infinite;
+    }
+
+    .back {
+      background: linear-gradient(135deg, #ff00f7, #00ffd9, #00f0ff, #ff8a00);
+      background-size: 300% 300%;
+      animation: holographic 6s ease infinite;
+      transform: rotateY(180deg);
+      font-size: 1rem;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+
+    @keyframes holographic {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="card">
+      <div class="card-face front">
+        ROOSSAAR
+      </div>
+      <div class="card-face back">
+        +372 5379 4838<br>
+        evon.roossaar@gmail.com
+      </div>
+    </div>
+  </div>
+</body>
+</html>
